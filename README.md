@@ -13,3 +13,5 @@ function code not recognized.
 #Use Case
 * This honeypot can be used to study attacks e.g. malicious use of function codes against ATG systems.
 
+#Usage
+`just execute the script ./lowoctance.py
