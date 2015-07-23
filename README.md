@@ -17,3 +17,8 @@ function code not recognized.
 `Usage: lowoctance.py <ip_address>`
 
 `Example: lowoctane.py 192.168.1.5`
+
+#Todo
+* add client requests to a log file or sqlite database.
+* add support for more fucntion commands 
+
