@@ -19,6 +19,6 @@ function code not recognized.
 `Example: lowoctane.py 192.168.1.5`
 
 #Todo
-* add client requests to a log file or sqlite database.
-* add support for more fucntion commands 
+* Add client requests to a log file or sqlite database.
+* Add support for more function commands. 
 
