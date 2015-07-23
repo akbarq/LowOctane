@@ -14,4 +14,6 @@ function code not recognized.
 * This honeypot can be used to study attacks e.g. malicious use of function codes against ATG systems.
 
 #Usage
-`just execute the script ./lowoctance.py
+`Usage: lowoctance.py <ip_address>
+
+Example: lowoctane.py 192.168.1.5`
