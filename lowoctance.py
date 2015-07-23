@@ -81,12 +81,6 @@ TANK PRODUCT               VOLUME TC-VOLUME   ULLAGE   HEIGHT    WATER    TEMP
         finally:
             self.sock.close()
 
-
-#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
-#port = 10001 #
-#host = '0.0.0.0'
-
-
 try:
     serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 except socket.error as err:
