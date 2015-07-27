@@ -11,7 +11,7 @@ import os
 print"""
 #####################################################################################################
 # Description: LowOctane honeypot mimics Veeder-root Automatic Tank Gauge (ATG) systems.            #
-#	       The honeypot listens on TCP port 10001 and only responds to fucntion code "I20100".  #
+#	       The honeypot listens on TCP port 10001 and respondsonly to fucntion code "I20100".   #
 #              All other function code requests from the client result in "9999FF1B" which means    #
 #	       function code not recognized.							    #
 # 	       This honeypot can be used to study attacks against ATG systems e.g. malicious use of #
@@ -29,7 +29,13 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+#logging client data to both console and log file.Data is written to the log file in append mode
+logging.basicConfig(filename='lowoctane.log',level=logging.DEBUG, format='%(asctime)s %(message)s')
+console = logging.StreamHandler()
+console.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s %(message)s')
+console.setFormatter(formatter)
+logging.getLogger('').addHandler(console)
 port = 10001
 host = sys.argv[1]
 
@@ -48,7 +54,7 @@ class client(Thread):
         try:
             while 1:
 		data = self.sock.recv(1024).decode('utf-8','ignore')
-                logging.info('Client IP: %s | ATG Function Code: %s' %  (address[0],data))
+                logging.info('Client IP: %s | Data sent by client: %s' %  (address[0],data))
 		#Tank inventory report request function code "I20100" in hex.
 	        if data == '\x01\x49\x32\x30\x31\x30\x30\x0d\x0a':
 			#Sending tank inventory status to client 
@@ -111,4 +117,3 @@ while 1:
 	logging.info ("Exiting all threads") 
         logging.shutdown()
         exit (0)
-
