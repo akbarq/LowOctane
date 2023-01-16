@@ -11,14 +11,14 @@ Python 2.7
 All other function code requests from the client result in **"9999FF1B"** which basically means function code not recognized.
 * So basically when a client sends "CTRL A + I20100" the honeypot responds back to the client with the tank inventory status report. If the client sends anything besides function code I20100 the honeypot responds with 9999FF1B which according to Veeder-root indicates that the system has not understood the command.
 
-#Use Case
+### Use Case
 * This honeypot can be used to study attacks e.g. malicious use of function codes against ATG systems.
 
-#Usage
+### Usage
 `Usage: lowoctance.py <ip_address>`
 
 `Example: lowoctane.py 192.168.1.5`
 
-#Todo
+### Todo
 * Add support for more function commands.
 
